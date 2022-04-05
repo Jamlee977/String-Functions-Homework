@@ -40,30 +40,23 @@ int substring(char __TOCOPYIN[], char __TOBECOPIED[], int __START, int __END) {
     int i, j;
     int size;
 
-    if (__END > __START) {
-        size = __END - __START;
-    }
+    if (__END > __START) size = __END - __START;
    
 
-    else {
-        size = __START - __END;
-    }
+    else size = __START - __END;
     
 
     if ((__START > (half + 1)) && (__END > (__START - half))) return 0;
     
     
-    for (i = 0, j = __START; i < __END && __TOBECOPIED[j] != '\0'; i++, j++) {
-        __TOCOPYIN[i] = __TOBECOPIED[j];
-    }
+    for (i = 0, j = __START; i < __END && __TOBECOPIED[j] != '\0'; i++, j++) __TOCOPYIN[i] = __TOBECOPIED[j];
 
-    if (!(__END == 1)) {
-        __TOCOPYIN[size] = '\0'; 
-    }
 
-    else {
-        __TOCOPYIN[1] = '\0';
-    }
+    if (!(__END == 1)) __TOCOPYIN[size] = '\0'; 
+    
+
+    else __TOCOPYIN[1] = '\0';
+    
     return 1;
 }
 
@@ -124,9 +117,7 @@ int at(char __ARRAYOFCHAR[], int __INDEX, char __INSERTEDCHAR) {
     int i;
 
     for (i = 0; i <= len; i++) {
-        if (i == __INDEX) {
-            __ARRAYOFCHAR[i] = __INSERTEDCHAR;
-        }
+        if (i == __INDEX) __ARRAYOFCHAR[i] = __INSERTEDCHAR;
     }
 
     return 1;
@@ -179,21 +170,17 @@ int main()
     cout << "Enter the desired inserted character: ";
     cin >> ch;
     ok2 = at(first, 3, ch);
-    if (!ok2) {
-        cout << "The new string has less than 4 char\n";
-    }
-    else {
-        cout << "The very new string is: " << first << endl << endl;
-    }
+
+    if (!ok2) cout << "The new string has less than 4 char\n";
+    
+    else cout << "The very new string is: " << first << endl << endl;
+    
 
     cout << endl << endl << "Enter the character that you wanna find: ";
     cin >> ch; 
     ok3 = find(first, ch);
-    if (ok3 == -1) {
-        cout << "There is no " << ch << " in the new string.";
-    }
-    else {
-        cout << "The first place " << ch << " was found is in " << ok3;
-    }
+    if (ok3 == -1) cout << "There is no " << ch << " in the new string.";
+    
+    else cout << "The first place " << ch << " was found is in " << ok3;
 
 }
