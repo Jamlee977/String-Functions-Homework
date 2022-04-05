@@ -31,9 +31,7 @@ int length(char __LEN_OF_ARRAY_OF_CHARACTERS__[]) {
  */
 int substring(char __TOCOPYIN[], char __TOBECOPIED[], int __START, int __END) {
     int len = length(__TOBECOPIED);
-    if (__END > len) return 0;
-    
-    if (__START > len) return 0;
+    if (__END > len || __START > len) return 0;
 
 
     int half = length(__TOBECOPIED) / 2;
@@ -43,7 +41,7 @@ int substring(char __TOCOPYIN[], char __TOBECOPIED[], int __START, int __END) {
     if (__END > __START) size = __END - __START;
    
 
-    else size = __START - __END;
+    if(!(__END > __START)) size = __START - __END;
     
 
     if ((__START > (half + 1)) && (__END > (__START - half))) return 0;
@@ -52,10 +50,10 @@ int substring(char __TOCOPYIN[], char __TOBECOPIED[], int __START, int __END) {
     for (i = 0, j = __START; i < __END && __TOBECOPIED[j] != '\0'; i++, j++) __TOCOPYIN[i] = __TOBECOPIED[j];
 
 
-    if (!(__END == 1)) __TOCOPYIN[size] = '\0'; 
+    if (__END != 1) __TOCOPYIN[size] = '\0'; 
     
 
-    else __TOCOPYIN[1] = '\0';
+    if(__END == 1) __TOCOPYIN[1] = '\0';
     
     return 1;
 }
