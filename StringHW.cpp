@@ -2,8 +2,10 @@
 
 // Omar Estietie
 
-using namespace std;
-
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
 
 /**
  * @brief This function is used to get the length of an Array of Characters.
