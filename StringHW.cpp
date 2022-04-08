@@ -142,54 +142,46 @@ int find(char __INVESTIGATED_ARRAY[], char __DESIRED_CHARACTER) {
 
 int main()
 {
-    // char first[100], second[100], third[100];
-    // int len, end, ok, ok1, ok2, ok3;
-    // char ch;
-    // cout << "Enter a string: ";
+    char first[100], second[100], third[100];
+    int len, end, ok, ok1, ok2, ok3;
+    char ch;
+    cout << "Enter a string: ";
 
-    char first[100] = "heloo";
-    char second[100];
-    int len = length(first);
-    int end = len / 2;
-    cout << substring(second, first, end+1, len-1);
-    cout << endl << second;
+    gets_s(first);
+    len = length(first);
+    end = len / 2;
 
+    substring(second, first, 0, end);
+    ok = substring(second, first, 0, end);
+    cout << "The second string is: " << second << endl;
+    cout << ok << endl; // to get the return-value whether it's 1 or 0.
 
-    // gets_s(first);
-    // len = length(first);
-    // end = len / 2;
+    ok1 = substring(third, first, end, len);
+    cout << "The third string is: " << third;
+    cout << endl << ok1 << endl; // to get the return-value whether it's 1 or 0.
 
-    // substring(second, first, 0, end);
-    // ok = substring(second, first, 0, end);
-    // cout << "The second string is: " << second << endl;
-    // cout << ok << endl; // to get the return-value whether it's 1 or 0.
+    append(third, second);
 
-    // ok1 = substring(third, first, end, len);
-    // cout << "The third string is: " << third;
-    // cout << endl << ok1 << endl; // to get the return-value whether it's 1 or 0.
+    cout << endl << "The third array after being appended: " << third;
 
-    // append(third, second);
+    copy(first, third);
 
-    // cout << endl << "The third array after being appended: " << third;
+    cout << "\n\nNew version of the string: " << first << endl << endl;
 
-    // copy(first, third);
+    cout << "Enter the desired inserted character: ";
+    cin >> ch;
+    ok2 = at(first, 3, ch);
 
-    // cout << "\n\nNew version of the string: " << first << endl << endl;
-
-    // cout << "Enter the desired inserted character: ";
-    // cin >> ch;
-    // ok2 = at(first, 3, ch);
-
-    // if (!ok2) cout << "The new string has less than 4 char\n";
+    if (!ok2) cout << "The new string has less than 4 char\n";
     
-    // else cout << "The very new string is: " << first << endl << endl;
+    else cout << "The very new string is: " << first << endl << endl;
     
 
-    // cout << endl << endl << "Enter the character that you wanna find: ";
-    // cin >> ch; 
-    // ok3 = find(first, ch);
-    // if (ok3 == -1) cout << "There is no " << ch << " in the new string.";
+    cout << endl << endl << "Enter the character that you wanna find: ";
+    cin >> ch; 
+    ok3 = find(first, ch);
+    if (ok3 == -1) cout << "There is no " << ch << " in the new string.";
     
-    // else cout << "The first place " << ch << " was found is in " << ok3;
+    else cout << "The first place " << ch << " was found is in " << ok3;
 
 }
