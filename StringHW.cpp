@@ -139,8 +139,6 @@ int find(char __INVESTIGATED_ARRAY[], char __DESIRED_CHARACTER) {
     return -1;
 }
 
-// E
-
 
 int main()
 {
