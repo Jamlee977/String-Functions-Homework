@@ -40,10 +40,10 @@ int substring(char __TOCOPYIN[], char __TOBECOPIED[], unsigned int __START, unsi
     int i, j;
     int size;
 
-    if (__END > __START) size = __END - __START;
+    if (__END > __START) size = __END + __START;
    
 
-    if(!(__END > __START)) size = __START - __END;
+    if(!(__END > __START)) size = __START + __END;
     
 
     if ((__START > (half + 1)) && (__END > (__START - half))) return 0;
@@ -156,7 +156,7 @@ int main()
     cout << "The second string is: " << second << endl;
     cout << ok << endl; // to get the return-value whether it's 1 or 0.
 
-    ok1 = substring(third, first, end, len);
+    ok1 = substring(third, first, end+1, len-1);
     cout << "The third string is: " << third;
     cout << endl << ok1 << endl; // to get the return-value whether it's 1 or 0.
 
