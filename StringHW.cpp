@@ -15,10 +15,7 @@ using std::endl;
  */
 int length(char __LEN_OF_ARRAY_OF_CHARACTERS__[]) {
     int i, countOfChar = 0;
-    for (int i = 0; __LEN_OF_ARRAY_OF_CHARACTERS__[i]; i++)
-    {
-        countOfChar++;
-    }
+    for (int i = 0; __LEN_OF_ARRAY_OF_CHARACTERS__[i]; i++) { countOfChar++; }
     return countOfChar;
 }
 
@@ -40,7 +37,7 @@ int substring(char __TOCOPYIN[], char __TOBECOPIED[], unsigned int __START, unsi
     int i, j;
     int size;
 
-    if (__END > __START) size = __END + __START;
+    if (__END > __START) size = __END - __START;
    
 
     if(!(__END > __START)) size = __START + __END;
@@ -99,7 +96,7 @@ void copy(char __TOCOPYIN[], char __TOBECOPIED[]) {
     {
         __TOCOPYIN[i] = __TOBECOPIED[i];
     }
-    __TOCOPYIN[i] = '\0';    
+    __TOCOPYIN[i] = '\0';
 }
 
 /**
