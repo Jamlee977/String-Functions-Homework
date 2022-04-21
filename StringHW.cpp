@@ -162,7 +162,7 @@ int main()
     cout << endl << "The third array after being appended: " << third;
 
     copy(first, third);
-
+/
     cout << "\n\nNew version of the string: " << first << endl << endl;
 
     cout << "Enter the desired inserted character: ";
